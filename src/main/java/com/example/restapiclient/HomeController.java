@@ -20,9 +20,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model){
         products.clear();
-        apiService.getProducts().forEach(s -> {
-            products.add(s);
-        });
+        apiService.getProducts().forEach(s -> { products.add(s); });
         model.addAttribute("products", products);
         return "index";
     }
